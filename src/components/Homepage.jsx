@@ -14,7 +14,6 @@ const Homepage = () => {
     if (loading) return;
 
     setLoading(true);
-    // const newItems = await new Promise((resolve) => {
     var offset = (page - 1) * dataLength;
     fetch(
       `https://api.spacexdata.com/v3/launches?limit=${dataLength}&offset=${offset}&mission_name=${name}`
@@ -26,7 +25,6 @@ const Homepage = () => {
         setHasMore(newItems.length > 0);
         setLoading(false);
       });
-    // });
   };
 
   // handle the scroll event
