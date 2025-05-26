@@ -10,28 +10,6 @@ const Homepage = () => {
   const [hasMore, setHasMore] = useState(true);
   const dataLength = 10; //length of the data to be displayed every scroll
 
-  const loadMore2 = useCallback(
-    async (name) => {
-      if (loading) return;
-
-      setLoading(true);
-      const newItems = await new Promise((resolve) => {
-        var offset = (page - 1) * dataLength;
-        fetch(
-          `https://api.spacexdata.com/v3/launches?limit=${dataLength}&offset=${offset}&rocket_name=${name}`
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            resolve(data);
-          });
-      });
-      setItems((prev) => [...prev, ...newItems]);
-      setHasMore(newItems.length > 0);
-      setLoading(false);
-    },
-    [page, loading]
-  );
-
   const loadMore = async (name) => {
     if (loading) return;
 
