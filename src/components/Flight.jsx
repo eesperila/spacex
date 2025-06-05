@@ -20,7 +20,7 @@ const Flight = ({
       <span
         className="launch__status launch__status--info"
         style={{
-          fontSize: "16px",
+          fontSize: "12px",
         }}
       >
         upcoming
@@ -32,7 +32,7 @@ const Flight = ({
         <span
           className="launch__status launch__status--success"
           style={{
-            fontSize: "16px",
+            fontSize: "12px",
           }}
         >
           success
@@ -43,7 +43,7 @@ const Flight = ({
         <span
           className="launch__status launch__status--danger"
           style={{
-            fontSize: "16px",
+            fontSize: "12px",
           }}
         >
           failed
